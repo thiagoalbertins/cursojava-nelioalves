@@ -1,5 +1,6 @@
 package exerciciocomposicao116;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,6 +11,8 @@ public class Post {
 	private String title, content;
 	private Integer likes;
 	private List<Comment> comments = new ArrayList<>();
+
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 
 	public Post() {
 
@@ -62,10 +65,18 @@ public class Post {
 		comments.remove(comment);
 	}
 
-	@Override
 	public String toString() {
-		return "Post [moment=" + moment + ", title=" + title + ", content=" + content + ", likes=" + likes
-				+ ", comments=" + comments + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append(title + "\n");
+		sb.append(likes);
+		sb.append(" Likes - ");
+		sb.append(sdf.format(moment) + "\n");
+		sb.append(content + "\n");
+		sb.append("Comments:\n");
+		for (int i = 0; i < comments.size(); i++) {
+			sb.append(comments.get(i).getText() + "\n");
+		}
+		return sb.toString();
 	}
 
 }
