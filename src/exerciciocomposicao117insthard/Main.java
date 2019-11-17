@@ -1,4 +1,4 @@
-package exerciciocomposicao116insthard;
+package exerciciocomposicao117insthard;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,11 +21,11 @@ public class Main {
 		
 		int likes = 12;
 		
-		Post p1 = new Post(moment, title, content, likes);
-		p1.addComment(c1);	
-		p1.addComment(c2);
-		
-		p1.toString();
+		Post post = new Post(moment, title, content, likes);
+		post.addComment(c1);	
+		post.addComment(c2);
+	
+		System.out.println(post);
 	}
 
 }

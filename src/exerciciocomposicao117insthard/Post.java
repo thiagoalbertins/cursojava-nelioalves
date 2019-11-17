@@ -1,4 +1,4 @@
-package exerciciocomposicao116insthard;
+package exerciciocomposicao117insthard;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -73,8 +73,8 @@ public class Post {
 		sb.append(sdf.format(moment) + "\n");
 		sb.append(content + "\n");
 		sb.append("Comments:\n");
-		for (int i = 0; i < comments.size(); i++) {
-			sb.append(comments.get(i).getText() + "\n");
+		for (Comment c : comments) {
+			sb.append(c.getText() + "\n");
 		}
 		return sb.toString();
 	}
