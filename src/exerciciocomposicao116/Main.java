@@ -3,48 +3,29 @@ package exerciciocomposicao116;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) throws ParseException {
 
-		Scanner s = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 
-		System.out.println("Digite quantos post serão criados: ");
-
-		int n = s.nextInt();
-
-		for (int i = 1; i < (n + 1); i++) {
-
-			System.out.println("Digite a data do post: #" + i);
-			s.nextLine();
-			Date moment = sdf.parse(s.nextLine());
-			System.out.println("Digite o título do  post: #" + i);
-			String title = s.nextLine();
-			System.out.println("Digite o conteúdo do post: #" + i);
-			String content = s.nextLine();
-			System.out.println("Digite o número de likes: #" + i);
-			int likes = s.nextInt();
-			System.out.println("Digite quantos comentários o post #" + i + "tem: ");
-			int nComments = s.nextInt();
-
-			Post post = new Post(moment, title, content, likes);
-
-			for (int j = 1; j < (nComments + 1); j++) {
-
-				System.out.println("Digite o comentário: ");
-				String text = s.nextLine();
-				Comment a = new Comment(text);
-				post.addComment(a);
-			}
-
-		}
+		Comment c1 = new Comment("Have a nice trip!");
+		Comment c2 = new Comment("Wow that's awesome!");
 		
+		Date moment = sdf.parse("21/06/2018 13:05:44");
 		
-		s.close();
-
+		String title = "Traveling to New Zealand";
+		
+		String content = "I'm going to visit this wonderful country!";
+		
+		int likes = 12;
+		
+		Post p1 = new Post(moment, title, content, likes);
+		p1.addComment(c1);	
+		p1.addComment(c2);
+		
+		p1.toString();
 	}
 
 }
