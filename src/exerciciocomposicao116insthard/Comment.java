@@ -1,4 +1,4 @@
-package exerciciocomposicao116;
+package exerciciocomposicao116insthard;
 
 public class Comment {
 	
