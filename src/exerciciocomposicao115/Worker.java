@@ -1,4 +1,4 @@
-package exercicio.composicao115;
+package exerciciocomposicao115;
 
 import java.util.ArrayList;
 import java.util.Calendar;
