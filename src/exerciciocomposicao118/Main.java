@@ -38,11 +38,11 @@ public class Main {
 			System.out.println("Enter #" + i + " item data:");
 			System.out.println("Product name:");
 			String n = s.nextLine();
-			n = s.nextLine();
 			System.out.println("Product price: ");
 			Double p = s.nextDouble();
 			System.out.println("Quantity: ");
 			int q = s.nextInt();
+			s.nextLine();
 			Product a = new Product(n, p);
 			OrderItem b = new OrderItem(q, p, a);
 			order.addItem(b);
